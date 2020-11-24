@@ -5,6 +5,7 @@ An automated pipeline for the 2.16m BFOSC data reduction.
 
 1. install `songcn` package
     - `pip install -U git+git://github.com/hypergravity/songcn`
+    - `pip show songcn` should be at least `0.0.9`
 2. download `bfosc`
     - `git clone https://github.com/hypergravity/bfosc.git`
 3. revise the parameters in `bfosc_pipeline.py`
