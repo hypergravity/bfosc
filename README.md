@@ -10,6 +10,7 @@ An automated pipeline for the 2.16m BFOSC data reduction.
     - `git clone https://github.com/hypergravity/bfosc.git`
 3. revise the parameters in `bfosc_pipeline.py`
 4. run it
+    - `ipython bfosc_pipeline.py > bfosc_reduction_20201124.log`
 
 ## E9G10
 Currently, only E9+G10 configuration is tested.
