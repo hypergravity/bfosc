@@ -202,7 +202,7 @@ n_star = len(fps_star)
 for i_star, fp in enumerate(fps_star):
     print("  |- ({}/{}) processing STAR ... ".format(i_star, n_star), end="")
     fp_out = "{}/star-{}.dump".format(os.path.dirname(fp), os.path.basename(fp))
-    star = read_star(fps_star[0])
+    star = read_star(fp)
     star -= ap.background(star, q=(10, 10), npix_inter=5, sigma=(20, 20), kernel_size=(21, 21))
     star /= sensitivity
     star1d = ap.extract_all(star, n_jobs=1, verbose=False)
