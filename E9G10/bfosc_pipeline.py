@@ -269,9 +269,11 @@ def proc_fear(fp, nsigma=2.5, verbose=False):
         u_order = np.unique(order)
         for _u_order in u_order:
             ind = (order == _u_order) & ind_good
-            p1f = Poly1DFitter(linex[ind], z[ind], deg=deg, pw=pw)
-            res = z[ind] - p1f.predict(linex[ind])
-            ind_good[ind] &= np.abs(res) < threshold
+            if np.sum(ind) > 10:
+                # in case some orders have only a few lines
+                p1f = Poly1DFitter(linex[ind], z[ind], deg=deg, pw=pw)
+                res = z[ind] - p1f.predict(linex[ind])
+                ind_good[ind] &= np.abs(res) < threshold
         tlines["ind_good"] = ind_good
         return
 
