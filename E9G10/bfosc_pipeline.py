@@ -164,11 +164,13 @@ for i in range(len(intersect)):
     if np.any(np.abs(intersect[i] - intersect[i + 1:]) < 5):
         ind_valid_ap[i] = False
 ap_interp = ap_illusion[ind_valid_ap]
+ap_interp = ap_interp[ap_interp[:, -1] < 1070]
 try:
     assert ap_interp.shape[0] == 12
 except:
-    print("invalid number of apertures, please check images")
+    print("invalid number of apertures, please check images!")
     print("ap_interp", ap_interp.shape)
+    print("Note that the FEAT template has 11 orders!")
 ap_interp = ap_interp[1:]
 print("  |- final aperture shape", ap_interp.shape)
 
