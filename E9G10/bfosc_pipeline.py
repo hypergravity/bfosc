@@ -171,6 +171,7 @@ except:
     print("invalid number of apertures, please check images!")
     print("ap_interp", ap_interp.shape)
     print("Note that the FEAT template has 11 orders!")
+    raise RuntimeError()
 ap_interp = ap_interp[1:]
 print("  |- final aperture shape", ap_interp.shape)
 
@@ -318,7 +319,9 @@ def proc_fear(fp, nsigma=2.5, verbose=False):
             pf1=pf1,
             pf2=pf2,
             mpflux=mpflux,
-            fear=fear)
+            # fear=fear,
+            fear1d=fear1d
+        )
         return calibration_dict
     else:
         print("!!! result is not acceptable, this FEAR is skipped")
