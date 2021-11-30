@@ -36,10 +36,9 @@ class UiBfosc(QtWidgets.QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.add_canvas()
         self.initUi()
-        self.add_canvas()
 
         # debug
-        self.assumption()
+        # self.assumption()
 
     def add_canvas(self):
         self.widget2 = QtWidgets.QWidget(self.centralwidget)
