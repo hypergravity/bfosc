@@ -38,7 +38,7 @@ class UiBfosc(QtWidgets.QMainWindow, Ui_MainWindow):
         self.initUi()
 
         # debug
-        # self.assumption()
+        self.assumption()
 
     def add_canvas(self):
         self.widget2 = QtWidgets.QWidget(self.centralwidget)
@@ -311,13 +311,13 @@ class UiBfosc(QtWidgets.QMainWindow, Ui_MainWindow):
         # print(self.ap_trace[:,0])
         self.ap_trace = self.ap_trace[sort_apertures(self.ap_trace)]
         # fit
-        self.ap = Aperture(ap_center=self.ap_trace[:, ::-1], ap_width=20)
+        self.ap = Aperture(ap_center=self.ap_trace[:, ::-1], ap_width=15)
         self.ap.get_image_info(self.master_flat)
         self.ap.polyfit(2)
         # replace old traces
         self.ap_trace = self.ap.ap_center_interp[:, ::-1]
         # fit again
-        self.ap = Aperture(ap_center=self.ap_trace[:, ::-1], ap_width=20)
+        self.ap = Aperture(ap_center=self.ap_trace[:, ::-1], ap_width=15)
         self.ap.get_image_info(self.master_flat)
         self.ap.polyfit(2)
         self._draw_aperture()
