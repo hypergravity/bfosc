@@ -18,5 +18,4 @@ An automated pipeline for the 2.16m BFOSC data reduction.
 Currently, only E9+G10 configuration is tested.
 
 ## Orders
-
-![](https://github.com/hypergravity/bfosc/tree/main/E9G10/template/E9G10_orders.png)
+<p align="center"><img width="100%" src="E9G10/template/E9G10_orders.png" /></p>
